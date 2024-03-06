@@ -1,0 +1,10 @@
+<div class="pagination">
+  <button (click)="onPreviousGroupClick()" [disabled]="currentPage <= 1">&lt;&lt;</button>
+  <button (click)="onPreviousClick()" [disabled]="currentPage <= 1">&lt;</button>
+  <ng-container *ngFor="let pageNumber of getPages()">
+    <button (click)="onPageChange(pageNumber)" [class.active]="pageNumber === currentPage">{{ pageNumber }}</button>
+  </ng-container>
+  <button (click)="onNextClick()" [disabled]="currentPage >= getMaxPage()">&gt;</button>
+  <button (click)="onNextGroupClick()" [disabled]="currentPage >= getMaxPage()">&gt;&gt;</button>
+</div>
+

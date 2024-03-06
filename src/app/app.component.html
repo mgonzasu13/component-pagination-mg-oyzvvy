@@ -1,0 +1,16 @@
+<div>
+  <!-- Aquí colocas tu lista de elementos -->
+  <ul>
+    <li *ngFor="let item of itemsForPage">{{ item.id }}</li>
+  </ul>
+
+  <!-- Aquí agregas el componente de paginación -->
+  <app-custom-pagination
+    [currentPage]="currentPage"
+    [itemsPerPage]="itemsPerPage"
+    [totalItems]="totalItems"
+    (pageChange)="onPageChange($event)">
+  </app-custom-pagination>
+</div>
+
+{{ currentPage }}
